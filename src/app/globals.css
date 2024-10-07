@@ -1,0 +1,745 @@
+/* globals.css */
+
+/* Default Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff; /* White text color for good contrast */
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url('/website_background.jpg') no-repeat center center fixed; /* Add background image */
+  background-size: cover;
+  background-blend-mode: darken;
+  position: relative; /* Enable child elements like overlay to be positioned relative to the body */
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(113, 5, 69, 0.19); /* Navy blue overlay with transparency */
+  z-index: -1; /* Ensure overlay sits behind content */
+}
+
+/* Full-Page Section Styling */
+.full-page-section {
+  min-height: 100vh; /* Ensure full height for each section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem 2rem; /* Increased padding for more space */
+  scroll-snap-align: start;
+  margin-bottom: 6rem; /* Added margin to prevent overlap */
+  background-color: rgba(10, 10, 35, 0.9); /* Consistent dark blue/black background */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Main Page Specific Styling */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(10, 10, 35, 0.45); /* Consistent dark blue/black color */
+  color: #ffffff;
+  padding-bottom: 6rem;
+}
+
+.hero-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #da2d84; /* Pink color for the name */
+}
+
+.hero-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #01a0d5; /* Light blue color for description */
+
+}
+.hero-section h2:hover{
+  transform: scale(1.2); /* Increase scale factor */
+  transition: transform 0.4s ease-in-out;
+  text-shadow: 3px 3px 15px #073949; /* Add shadow during hover */
+}
+
+.hero-section h1,
+.about-content h1,
+.blog-title,
+.project-title {
+  font-family: 'Playfair Display', serif;
+  color: #da2d84; /* Your brand color */
+  text-shadow: 1px 1px 10px #000; /* Adding shadow to text for better visibility */
+}
+
+.hireme-title {
+  font-family: 'Playfair Display', sans-serif;
+  color: #00bfff; /* Your brand color */
+  text-shadow: 1px 1px 10px #000; /* Adding shadow to text for better visibility */
+}
+
+.hero-section .about-button:hover {
+  background-color: #e60073; /* Slightly darker pink for hover */
+  transform: scale(1.2); /* Increase scale factor */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Header Styling */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(42, 5, 47, 0.85); /* Darker color for header */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem; /* Reduced padding to make the header shorter */
+  height: 80px; /* Set a fixed height, adjust as needed */
+  z-index: 1000;
+  font-size: 0.9rem; /* Reduce font size to match a smaller header */
+}
+
+
+/* Profile Button Styling */
+.profile-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Gap between profile image and text */
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+  width: 60px;
+  height: auto;
+  border-radius: 50%; /* Circular profile image */
+  object-fit: cover; /* Prevent image cutoff */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+.profile-picture:hover {
+  transform: scale(1.05); /* Scales the profile picture container to 105% on hover */
+}
+
+/* Hire Me Button Styling */
+.hire-me-button {
+  background-color: #da2d84;
+  color: #fff;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: -19px; /* Add negative margin to move the button up */
+}
+
+.hire-me-button:hover {
+  background-color: #e60073;
+  transform: scale(1.05);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  left: -300px; /* Sidebar hidden initially */
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #da2d84, #e60073);
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar.open {
+  left: 0; /* Sidebar visible when open */
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 11;
+  width: 100%;
+}
+
+.sidebar-nav ul li {
+  margin-top: 1.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.9rem;
+  transition: color 0.3s, transform 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-nav ul li:hover a {
+  color: #ffd700;
+  transform: translateX(10px);
+}
+
+/* Contact Icons Styling */
+.contact-icons {
+  margin-top: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-icons a {
+  color: #fff;
+  font-size: 1.8rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.contact-icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Main Content Styling */
+.main-content {
+  margin-top: 60px; /* Make space for the fixed header */
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+
+.full-page-section:not(:last-child),
+.projects-section:not(:last-child),
+.about-section:not(:last-child),
+.skills-section:not(:last-child),
+.experience-section:not(:last-child),
+.blogs-section:not(:last-child) {
+  margin-bottom:5rem; /* Add margin to separate sections */
+}
+
+/* Hover Effect for Enlarging Titles */
+/* Hover Effect for Enlarging Titles */
+.hero-section h1:hover,
+.main-title:hover,
+.project-title:hover,
+.blog-title:hover {
+  transform: scale(1.2); /* Increase scale factor */
+  transition: transform 0.4s ease-in-out;
+  text-shadow: 3px 3px 15px #5f1647; /* Add shadow during hover */
+}
+
+/* Projects Section Styling */
+.projects-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  color: #da2d84; /* Pink color for the title */
+  margin-bottom: 2rem;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* About Section Styling */
+.about-section {
+  background-color: rgba(10, 10, 35, 0.5);/* Same background color as other pages */
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About Section Container */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Adds space between profile picture and text */
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Profile Picture Container Styling with Hover */
+.profile-pic-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+}
+
+.profile-pic-container:hover {
+  transform: scale(1.05); /* Scales the profile picture container to 105% on hover */
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+  width: 100%; /* Make sure the image takes up the entire width of the container */
+  height: auto; /* Keep the aspect ratio */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow to the picture */
+  object-fit: cover; /* Ensure the image doesn't get distorted */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the image */
+}
+
+.profile-pic-container:hover .profile-pic {
+  transform: scale(1.1); /* Scales the image inside the container to 110% on hover for a zoom effect */
+}
+
+
+/* About Content Styling */
+.about-content {
+  flex: 2; /* Takes 2 portions of the available space, making it wider than the profile picture */
+  color: #ffffff;
+  text-align: left;
+}
+
+.about-content h1 {
+  font-family: 'Playfair Display', serif;
+  color: #da2d84; /* Pink color for title, consistent with the theme */
+  margin-bottom: 1.5rem;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Project Card Styling */
+.project-card {
+  background: #1a1a40; /* Lighter dark shade for card background */
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Project Details Styling */
+.project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.27rem;
+  transition: transform 0.3s ease-in-out;
+  color: #6cb3f6;
+  margin-bottom: 0.9rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #dddddd;
+  margin-bottom: 1.5rem;
+  font-stretch: semi-expanded;
+  font-style:inherit;
+}
+
+/* Hover Effects */
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Add bottom margin for sections to prevent overlapping */
+.full-page-section:not(:last-child) {
+  margin-bottom: 4rem; /* Prevent sections from overlapping */
+}
+
+.hero-section .about-button,
+.hire-me-button {
+  background-color: #9a205d; /* Pink color */
+  color: #ffffff; /* White text color for buttons */
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 29px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .projects-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
+
+/* Skills Section Styling */
+.skills-section {
+  background-color: rgba(10, 10, 35, 0.5);
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.skills-card {
+  background-color: rgba(26, 26, 26, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-card:hover {
+  transform: translateY(-10px);
+}
+
+.skills-icon {
+  font-size: 3rem;
+  color: #ff0080;
+  margin-bottom: 1rem;
+}
+
+.skills-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.skills-card p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* Experience Section Styling */
+.experience-section {
+  position: relative;
+  min-height: 120vh; /* Increased height to accommodate timeline */
+  padding: 4rem 2rem; /* Reduced top padding for better alignment */
+  text-align: center;
+  background-color: rgba(15, 15, 15, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden; /* Ensures no content flows outside the section */
+  margin-bottom: 8rem; /* Space below the section to separate from next section */
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  transition: transform 0.3s ease-in-out;
+  color: #da2d84;
+  margin-bottom: 3rem; /* Increased margin to create more space */
+}
+
+/* Timeline Styling */
+.timeline {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding-left: 2rem;
+}
+
+/* Timeline Styling */
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px; /* Timeline line width */
+  background: #ffffff; /* White line for the timeline */
+  transform: translateX(-50%);
+}
+
+/* Timeline Year Styling */
+.timeline-year {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bbff; /* Yellow for the year */
+  z-index: 1; /* Keeps year below the content cards */
+}
+
+/* Specific Adjustments for Odd and Even Year Placements */
+.timeline-item:nth-child(odd) .timeline-year {
+  left: -0.005rem; /* Moves the year closer to the line for left side cards */
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  right: -0.005rem; /* Moves the year closer to the line for right side cards */
+}
+
+/* Timeline Items */
+.timeline-item {
+  position: relative;
+  margin-bottom: 5rem;
+  padding-left: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Floating Cards Adjustment (Left and Right) */
+.timeline-item:nth-child(odd) {
+  align-items: flex-end;
+  text-align: right; 
+  padding-right: 2rem; /* Increased padding to move the left card a bit more left */
+}
+
+.timeline-item:nth-child(even) {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 1rem; /* Maintain standard spacing for the right card */
+}
+
+.timeline-content {
+  background: #1a1a40;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  margin-top: 1rem;
+}
+
+/* Adjust the job card content */
+.timeline-content h2 {
+  margin-bottom: 0.5rem; /* Space between the job title and company name */
+  font-size: 1.5rem; /* Adjust font size if needed */
+  color: #ffffff;
+}
+.timeline-content h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem; /* Space between the job title and company name */
+  font-size: 1.25rem; /* Adjust font size if needed */
+  color: #ffffff;
+}
+
+.timeline-content p {
+  font-size: 0.95rem; /* Adjust font size if needed */
+  line-height: 1.655; /* Adjust line height to create better spacing for paragraphs */
+}
+
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .timeline-year {
+    font-size: 1.2rem;
+    top: -20px; /* Place above the timeline card */
+    transform: translateY(-50%);
+  }
+
+  .timeline-item {
+    align-items: center !important;
+    text-align: center !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .timeline-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Add bottom margin for sections to prevent overlapping */
+.full-page-section:not(:last-child) {
+  margin-bottom: 6rem; /* Prevent sections from overlapping */
+}
+
+/* Blog Section Styling */
+.blogs-section {
+  background-color: rgba(15, 15, 15, 0.5);/* Darker background for differentiation */
+  padding: 6rem 2rem;
+  min-height: 100vh;
+}
+
+.blogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem; /* Gap between each blog card */
+}
+
+/* Blog Card Adjustment */
+.blog-card {
+  background: #1a1a40; /* Lighter dark shade for card background */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px; /* Fixed width to maintain consistent alignment */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content including image */
+}
+
+/* Blog Image Container */
+.blog-image-container {
+  width: 100%; /* Make the image container fill the width of the card */
+  height: 200px; /* Set a fixed height */
+  overflow: hidden; /* Hide any overflow from large images */
+  border-radius: 10px 10px 0 0; /* Rounded corners at the top for a uniform look */
+}
+
+/* Blog Image Styling */
+.blog-image-container img {
+  width: 100%; /* Set the width to fill the container */
+  height: 100%; /* Set the height to fill the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  object-position: center; /* Center the image in the container */
+}
+
+/* Blog Title Styling */
+.blog-title {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease-in-out;
+  color: #00bfff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Blog Link */
+.blog-link {
+  color: #da2d84;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: block;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.blog-link:hover {
+  color: #ffd700;
+  transform: scale(1.05);
+}
+
+/* globals.css */
+
+/* Hire Me Section Styling */
+.hireme-section {
+  background-color: rgba(15, 15, 15, 0.5); /* Match other sections */
+  padding: 6rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  min-height: 100vh; /* Make the section occupy full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.contact-info-container {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 6rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.contact-card svg {
+  color: #da2d84; /* Icon color */
+  font-size: 2rem;
+}
+
+.contact-card a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: #ffd700;
+}
+
+.footer {
+  margin-top: 4rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
