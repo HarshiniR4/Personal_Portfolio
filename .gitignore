@@ -8,7 +8,7 @@ node_modules/
 .vercel/
 
 # Environment variables
-.env.local
+.env
 
 # Logs
 *.log
