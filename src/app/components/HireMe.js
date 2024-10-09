@@ -9,7 +9,7 @@ const HireMe = () => {
       <p>
         I am open to Full Time AI/ML roles and SWE roles starting Summer 2025!</p>
         <p>
-        Here's how you can reach me:
+        Here&apos;s how you can reach me:
         </p>
     <div className="contact-card">
           <FaEnvelope />
