@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaCode, FaTools, FaLayerGroup } from "react-icons/fa";
+import { FaCode, FaLayerGroup, FaTools } from "react-icons/fa";
 
 const Skills = () => {
   return (
@@ -23,17 +23,17 @@ const Skills = () => {
         <div className="skills-card">
           <FaCode className="skills-icon" />
           <h2 className="skills-title">Programming Languages</h2>
-          <p>Python, C++, Java, SQL</p>
+          <p>Python, C++, Java, SQL, Django, ReactJs, Bash</p>
         </div>
         <div className="skills-card">
           <FaLayerGroup className="skills-icon" />
           <h2 className="skills-title">Frameworks/Libraries</h2>
-          <p>Pandas, Numpy, TensorFlow, PyTorch, OpenCV</p>
+          <p>Pandas, Numpy, TensorFlow, PyTorch, OpenCV, Keras, Scikit-learn, NLTK, RESTful API (Flask), NextJS</p>
         </div>
         <div className="skills-card">
           <FaTools className="skills-icon" />
           <h2 className="skills-title">Tools</h2>
-          <p>Docker, Ansible, Google Cloud Platform (GCP), Spark, Hadoop</p>
+          <p>Docker, Ansible, Google Cloud Platform (GCP), Spark, Hadoop, PostgreSQL, Selenium, Anaconda, Juju</p>
         </div>
       </motion.div>
     </motion.div>

@@ -3,6 +3,8 @@
 import { graphql } from '@octokit/graphql';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { FaGithub} from 'react-icons/fa';
+
 
 const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN; // Change here to use NEXT_PUBLIC prefix
 
@@ -55,6 +57,11 @@ const Projects = () => {
   return (
     <div id="projects" className="projects-section">
       <h2 className="projects-title">Projects</h2>
+      <p>These projects are linked directly from my <FaGithub />
+      <a href="https://github.com/HarshiniR4" target="_blank" rel="noopener noreferrer">
+        GitHub Profile
+      </a>
+    </p>
       <motion.div
         className="projects-container"
         initial={{ opacity: 0 }}
