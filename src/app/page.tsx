@@ -5,7 +5,6 @@ import MainPage from './components/MainPage';
 import Blogs from './components/Blogs';
 import Experience from './components/Experience';
 import HireMe from './components/HireMe';
-import Sidebar from './components/SideBar';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 
