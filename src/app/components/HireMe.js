@@ -1,6 +1,6 @@
 "use client"; // Required for using hooks in Next.js
 
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub} from 'react-icons/fa';
 
 const HireMe = () => {
   return (
