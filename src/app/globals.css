@@ -7,6 +7,13 @@
   box-sizing: border-box;
 }
 
+p {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 1rem;
+
+}
+
+
 /* Body Styling */
 body {
   font-family: 'Montserrat', sans-serif;
@@ -282,6 +289,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 4rem;
   gap: 2rem;
 }
 

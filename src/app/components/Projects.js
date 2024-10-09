@@ -59,7 +59,6 @@ const Projects = () => {
       <h2 className="projects-title">Projects</h2>
       <p>These projects are linked directly from my <FaGithub />
       <a href="https://github.com/HarshiniR4" target="_blank" rel="noopener noreferrer">
-        GitHub Profile
       </a>
     </p>
       <motion.div
