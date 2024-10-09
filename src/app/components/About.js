@@ -21,7 +21,7 @@ const About = () => {
         <div className="about-content">
           <h1 className="main-title">About Me</h1>
           <p>
-            Hi! I'm Harshini Raju, a Computer Science graduate student at New York University.
+            Hi! I&apos;m Harshini Raju, a Computer Science graduate student at New York University.
             I have a strong background in artificial intelligence, deep learning, and IoT technologies.
           </p>
         </div>
