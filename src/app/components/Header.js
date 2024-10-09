@@ -1,6 +1,5 @@
 "use client";
 
-import { FaUserCircle } from 'react-icons/fa';
 import Image from 'next/image';
 import profilePic from './profile.png';
 

@@ -1,7 +1,5 @@
 // src/styles/Button.js
 
-import styled from 'styled-components';
-
 const Button = styled.a`
   display: inline-block;
   padding: 0.75rem 1.5rem;

@@ -1,6 +1,6 @@
 "use client"; // Required for using hooks in Next.js
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const blogsData = [
   {
@@ -41,7 +41,7 @@ const Blogs = () => {
             whileTap={{ scale: 0.95 }}
           >
             <div className="blog-image-container">
-              <img src={blog.imgSrc} alt={blog.title} className="blog-image" />
+              <Image  src={blog.imgSrc} alt={blog.title} className="blog-image" width={500} height={300}/>
             </div>
             <h3 className="blog-title">{blog.title}</h3>
             <p>{blog.description}</p>
